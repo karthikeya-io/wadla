@@ -93,7 +93,7 @@ const Page1 = () => {
             Venue:
             <span
               style={{
-                color: "#5DA3FA",
+                color: "#f9adc0",
                 opacity: "0.8",
                 fontSize: "1.3rem",
               }}
@@ -114,7 +114,8 @@ const Page1 = () => {
             Organized by:
             <span
               style={{
-                color: "#5DA3FA",
+                color: "#f9adc0",
+                // #5DA3FA
                 opacity: "0.8",
                 fontSize: "1.3rem",
               }}

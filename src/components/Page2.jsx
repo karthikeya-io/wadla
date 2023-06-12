@@ -67,61 +67,16 @@ const Page2 = () => {
             backgroundColor: "#242B2E",
             color: "#FFFFFF",
             borderRadius: "25px",
-            height: "45%",
+            height: "47%",
             textAlign: "center",
             padding: "2.5%",
             marginTop: "5%",
           }}
         >
-          <h1>News</h1>
+          <h1>Organizing Commitee</h1>
         </Box>
       </Box>
     </Box>
-    // <div
-    //   style={{
-    //     padding: "25px",
-    //     display: "flex",
-    //     flexWrap: "wrap",
-    //     color: "#FFFFFF",
-    //   }}
-    // >
-    //   <div
-    //     style={{
-    //       height: "auto",
-    //       width: "100%",
-    //       maxWidth: "900px",
-    //       position: "relative",
-    //       padding: "25px",
-    //       backgroundColor: "#242B2E",
-    //       borderRadius: "25px",
-    //       color: "#FFFFFF",
-    //       marginRight: "10px",
-    //     }}
-    //   >
-    //     <SpeakersCarousel />
-    //   </div>
-
-    //   <Box
-    //     sx={{
-    //       height: "auto",
-    //       width: "300px",
-    //       backgroundColor: "#242B2E",
-    //       color: "#FFFFFF",
-    //       borderRadius: "25px",
-    //       marginRight: "10px",
-    //       width: {
-    //         xs: "100%",
-    //         sm: "100%",
-    //         md: "30%",
-    //         lg: "30%",
-    //       },
-    //     }}
-    //   >
-    //     <div>
-    //       <h1>News</h1>
-    //     </div>
-    //   </Box>
-    // </div>
   );
 };
 
