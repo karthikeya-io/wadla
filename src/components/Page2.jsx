@@ -22,7 +22,7 @@ const Page2 = () => {
           width: {
             xs: "95%",
             sm: "95%",
-            md: "65%",
+            md: "95%",
             lg: "65%",
           },
         }}
@@ -44,7 +44,7 @@ const Page2 = () => {
           width: {
             xs: "95%",
             sm: "95%",
-            md: "25%",
+            md: "95%",
             lg: "25%",
           },
           height: "auto",

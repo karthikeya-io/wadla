@@ -3,6 +3,7 @@ import BannerCarousel from "./BannerCarousel";
 import img1 from "../assets/temp/Academia_all_foreign.jpg";
 import img2 from "../assets/temp/download.jpeg";
 import img3 from "../assets/temp/Industry_all_c.jpg";
+import { Box } from "@mui/material";
 
 const Page1 = () => {
   const banners = [img1, img2, img3];
@@ -10,130 +11,155 @@ const Page1 = () => {
     "Embrace the AI Revolution with World-Leading Experts at WADLA 3.0";
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: "flex",
         flexWrap: "wrap",
+        color: "#FFFFFF",
+        width: "100%",
+        backgroundColor: "#242B2E",
+        borderRadius: "0 0 25px 25px",
       }}
     >
-      <BannerCarousel banners={banners} />
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "calc(100% - 1030px)", // 1000px = 980px of the carousel + 20px margin
-          transition: "all 0.5s ease",
-          backgroundColor: "#242B2E",
-          color: "#FFFFFF",
-          borderRadius: "0 0 25px 0",
+      <Box
+        sx={{
+          width: {
+            xs: "90%",
+            sm: "95%",
+            md: "55%",
+            lg: "65%",
+          },
         }}
       >
-        <h2
+        <BannerCarousel banners={banners} />
+      </Box>
+      <Box
+        sx={{
+          width: {
+            xs: "95%",
+            sm: "95%",
+            md: "45%",
+            lg: "30%",
+          },
+          margin: "auto",
+          padding: "2.5%",
+        }}
+      >
+        <div
           style={{
-            margin: "0px",
-            padding: "35px",
-            fontSize: "2.0rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            marginTop: "75px",
+            width: "100%",
+            transition: "all 0.5s ease",
+            backgroundColor: "#242B2E",
+            color: "#FFFFFF",
+            borderRadius: "0 0 25px 0",
           }}
         >
-          {caption}
-        </h2>
+          <h2
+            style={{
+              margin: "0px",
+              fontSize: "2.0rem",
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            {caption}
+          </h2>
 
-        <div>
-          <h3
-            style={{
-              margin: "0px",
-              padding: "5px",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            From:
-            <span
+          <div>
+            <h3
               style={{
-                color: "#FFD700",
-                opacity: "0.8",
-                fontSize: "1.3rem",
+                margin: "0px",
+                padding: "5px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                textAlign: "center",
               }}
             >
-              TBD
-            </span>
-          </h3>
-          <h3
-            style={{
-              margin: "0px",
-              padding: "5px",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            To:{" "}
-            <span
+              From:{" "}
+              <span
+                style={{
+                  color: "#FFD700",
+                  opacity: "0.8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                TBD
+              </span>
+            </h3>
+            <h3
               style={{
-                color: "#FFD700",
-                opacity: "0.8",
-                fontSize: "1.3rem",
+                margin: "0px",
+                padding: "5px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                textAlign: "center",
               }}
             >
-              TBD
-            </span>
-          </h3>
-          <h3
-            style={{
-              margin: "0px",
-              padding: "5px",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            Venue:
-            <span
+              To:{" "}
+              <span
+                style={{
+                  color: "#FFD700",
+                  opacity: "0.8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                TBD
+              </span>
+            </h3>
+            <h3
               style={{
-                color: "#f9adc0",
-                opacity: "0.8",
-                fontSize: "1.3rem",
+                margin: "0px",
+                padding: "5px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                textAlign: "center",
               }}
             >
-              {" "}
-              Online & IIITS
-            </span>
-          </h3>
-          <h3
-            style={{
-              margin: "0px",
-              padding: "5px",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            Organized by:
-            <span
+              Venue:
+              <span
+                style={{
+                  color: "#f9adc0",
+                  opacity: "0.8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                {" "}
+                Online & IIITS
+              </span>
+            </h3>
+            <h3
               style={{
-                color: "#f9adc0",
-                // #5DA3FA
-                opacity: "0.8",
-                fontSize: "1.3rem",
+                margin: "0px",
+                padding: "5px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                textAlign: "center",
               }}
             >
-              {" "}
-              Indian Institute of Information Technoloyg, Sri City
-            </span>
-          </h3>
-        </div>
+              Organized by:
+              <span
+                style={{
+                  color: "#f9adc0",
+                  // #5DA3FA
+                  opacity: "0.8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                {" "}
+                Indian Institute of Information Technoloyg, Sri City
+              </span>
+            </h3>
+          </div>
 
-        {/* <h3>
+          {/* <h3>
           From: Coming Soon...<br/>
           To: Coming Soon...<br/>
           Venue: Online/IIITS<br/>
           Organized by: Indian Institute of Information Technoloyg, Sri City<br/>
         </h3> */}
-      </div>
-    </div>
+        </div>
+      </Box>
+    </Box>
   );
 };
 

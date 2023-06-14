@@ -20,9 +20,7 @@ const BannerCarousel = ({ banners }) => {
     <div
       style={{
         height: "auto",
-        maxWidth: "980px",
         width: "100%",
-        position: "relative",
         padding: "25px",
         backgroundColor: "#242B2E",
         borderRadius: "0 0 0 25px",
