@@ -55,19 +55,54 @@ const Page2 = () => {
             backgroundColor: "#242B2E",
             color: "#FFFFFF",
             borderRadius: "25px",
-            height: "45%",
+            height: {
+              lg: "45%",
+            },
             textAlign: "center",
             padding: "2.5%",
           }}
         >
           <h1>News</h1>
+          <Box
+            sx={{
+              height: "80%",
+              overflow: "auto",
+            }}
+          >
+            <ul
+              style={{
+                textAlign: "left",
+                paddingLeft: "20px",
+              }}
+            >
+              <li>
+                <p
+                  style={{
+                    color: "#f9adc0",
+                  }}
+                >
+                  Wadla 3.0 is coming soon, stay tuned for more updates.
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.8rem",
+                    marginTop: "-10px",
+                  }}
+                >
+                  Date: [15 June 2023]
+                </p>
+              </li>
+            </ul>
+          </Box>
         </Box>
         <Box
           sx={{
             backgroundColor: "#242B2E",
             color: "#FFFFFF",
             borderRadius: "25px",
-            height: "47%",
+            height: {
+              lg: "45%",
+            },
             textAlign: "center",
             padding: "2.5%",
             marginTop: "5%",
