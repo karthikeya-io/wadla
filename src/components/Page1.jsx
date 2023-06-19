@@ -4,6 +4,7 @@ import img1 from "../assets/temp/Academia_all_foreign.jpg";
 import img2 from "../assets/temp/download.jpeg";
 import img3 from "../assets/temp/Industry_all_c.jpg";
 import { Box } from "@mui/material";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const Page1 = () => {
   const banners = [img1, img2, img3];
@@ -78,12 +79,12 @@ const Page1 = () => {
               From:{" "}
               <span
                 style={{
-                  color: "#FFD700",
+                  color: "#f0e68c",
                   opacity: "0.8",
                   fontSize: "1.3rem",
                 }}
               >
-                TBD
+                11th December, 2023
               </span>
             </h3>
             <h3
@@ -98,12 +99,13 @@ const Page1 = () => {
               To:{" "}
               <span
                 style={{
-                  color: "#FFD700",
+                  // color: "#FFD700",
+                  color: "#f0e68c",
                   opacity: "0.8",
                   fontSize: "1.3rem",
                 }}
               >
-                TBD
+                16th December, 2023
               </span>
             </h3>
             <h3
@@ -118,7 +120,7 @@ const Page1 = () => {
               Venue:
               <span
                 style={{
-                  color: "#f9adc0",
+                  color: "#f0e68c",
                   opacity: "0.8",
                   fontSize: "1.3rem",
                 }}
@@ -145,8 +147,18 @@ const Page1 = () => {
                   fontSize: "1.3rem",
                 }}
               >
-                {" "}
-                Indian Institute of Information Technoloyg, Sri City
+                <a
+                  style={{
+                    color: "#f9adc0",
+                    textDecoration: "none",
+                  }}
+                  href="https://www.iiits.ac.in/"
+                  target="_blank"
+                >
+                  {" "}
+                  Indian Institute of Information Technoloyg, Sri City{" "}
+                  {<LaunchIcon />}
+                </a>
               </span>
             </h3>
           </div>
