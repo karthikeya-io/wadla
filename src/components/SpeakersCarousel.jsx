@@ -29,7 +29,6 @@ const SpeakersCarousel = () => {
   }, []);
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -89,19 +88,19 @@ const SpeakersCarousel = () => {
       >
         Speakers
       </h2>
-      <h2
+      <h3
         style={{
           textAlign: "center",
         }}
       >
-        Industry Experts
-      </h2>
+        Academic Experts
+      </h3>
       <div>
         {loading ? (
           <LinearProgress color="secondary" />
         ) : (
-          <Slider {...industrySettings}>
-            {industrySpeakers.map((speaker, index) => (
+          <Slider {...academiaSettings}>
+            {academiaSpeakers.map((speaker, index) => (
               <div
                 key={index}
                 style={{
@@ -155,19 +154,19 @@ const SpeakersCarousel = () => {
         )}
       </div>
       <br />
-      <h2
+      <h3
         style={{
           textAlign: "center",
         }}
       >
-        Academic Experts
-      </h2>
+        Industry Experts
+      </h3>
       <div>
         {loading ? (
           <LinearProgress color="secondary" />
         ) : (
-          <Slider {...academiaSettings}>
-            {academiaSpeakers.map((speaker, index) => (
+          <Slider {...industrySettings}>
+            {industrySpeakers.map((speaker, index) => (
               <div
                 key={index}
                 style={{
