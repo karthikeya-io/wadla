@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import SpeakersCarousel from "./SpeakersCarousel";
 import { Box } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
+import { Link, Element } from "react-scroll";
 
 const Page3 = () => {
   function getRandomColor() {
@@ -46,13 +45,15 @@ const Page3 = () => {
             padding: "1% 2.5% 2.5% 2.5%",
           }}
         >
-          <h1
-            style={{
-              textAlign: "center",
-            }}
-          >
-            About
-          </h1>
+          <Element name="About">
+            <h1
+              style={{
+                textAlign: "center",
+              }}
+            >
+              About
+            </h1>
+          </Element>
           <Box
             sx={{
               width: "95%",
@@ -69,9 +70,11 @@ const Page3 = () => {
               "&::-webkit-scrollbar-track": {
                 boxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
                 webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+                backgroundColor: "#CAD5E2",
+                borderRadius: "25px",
               },
               "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "#242B2E",
+                backgroundColor: "#758283",
                 borderRadius: "25px",
               },
               background: `radial-gradient(${getRandomColor()} 3px, transparent 4px), radial-gradient(${getRandomColor()} 3px, transparent 4px), linear-gradient(#000 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, ${getRandomColor()} 75px, ${getRandomColor()} 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, ${getRandomColor()} 76px, ${getRandomColor()} 77px, transparent 78px, transparent 109px), #000`,
@@ -209,6 +212,7 @@ const Page3 = () => {
             backgroundColor: "#242B2E",
             color: "#FFFFFF",
             borderRadius: "25px",
+            maxHeight: "550px",
             height: {
               lg: "96%",
             },
@@ -216,7 +220,9 @@ const Page3 = () => {
             padding: "2.5% 2.5% 1% 2.5%",
           }}
         >
-          <h1>Archive</h1>
+          <Element name="Archive">
+            <h1>Archive</h1>
+          </Element>
           <Box
             sx={{
               height: "43%",
@@ -239,6 +245,55 @@ const Page3 = () => {
                 Wadla 2.0 - 2022 {<LaunchIcon />}
               </a>
             </h2>
+            <Box
+              sx={{
+                height: "63%",
+                padding: "0 2.5%",
+                overflowY: "scroll",
+
+                "&::-webkit-scrollbar": {
+                  width: ".6em",
+                },
+                "&::-webkit-scrollbar-track": {
+                  boxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+                  webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+                  backgroundColor: "#CAD5E2",
+                  borderRadius: "25px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#758283",
+                  borderRadius: "25px",
+                },
+              }}
+            >
+              <p
+                style={{
+                  textAlign: "justify",
+                  fontSize: "0.85rem",
+                }}
+              >
+                WADLA 2.0 was a highly successful workshop aimed at researchers,
+                educators, and industry professionals interested in deep
+                learning. The event was inaugurated by Dr. Manish Gupta,
+                Director of Google Research India, and valedicted by Shri Vishnu
+                Chandra, Group Head of the National Informatics Center of the
+                Government of India. The workshop provided a strong foundation
+                in the basics and advancements of deep learning, with practical
+                applications across various domains. The workshop also
+                facilitated academia-industry interactions through the
+                participation of leaders from diverse fields and included
+                industry-led hands-on sessions for participants to demonstrate
+                deep learning capabilities. 37 speakers, including 15 IIT
+                faculties, 13 industry experts, 2 from the Government of India,
+                and 7 international speakers, were present at the event.
+                Researchers and faculties from around the world, including the
+                UK, Israel, South Korea, Mexico, Denmark, Morocco, and Sudan, as
+                well as from IITs, NITs, IIITs, IISERs, and central and state
+                universities, participated in the workshop. The event was
+                sponsored by DST and received an overwhelming response with 113
+                participants in attendance.
+              </p>
+            </Box>
           </Box>
           <Box
             sx={{

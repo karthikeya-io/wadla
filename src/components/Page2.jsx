@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import SpeakersCarousel from "./SpeakersCarousel";
 import { Box } from "@mui/material";
+import { Element } from "react-scroll";
 
 const Page2 = () => {
   return (
@@ -27,16 +28,19 @@ const Page2 = () => {
           },
         }}
       >
-        <Box
-          sx={{
-            backgroundColor: "#242B2E",
-            borderRadius: "25px",
-            color: "#FFFFFF",
-          }}
-        >
-          <SpeakersCarousel />
-        </Box>
+        <Element name="Speakers">
+          <Box
+            sx={{
+              backgroundColor: "#242B2E",
+              borderRadius: "25px",
+              color: "#FFFFFF",
+            }}
+          >
+            <SpeakersCarousel />
+          </Box>
+        </Element>
       </Box>
+
       <Box
         sx={{
           color: "#FFFFFF",
@@ -62,11 +66,24 @@ const Page2 = () => {
             padding: "2.5%",
           }}
         >
-          <h1>News</h1>
+          <Element name="News">
+            <h1>News</h1>
+          </Element>
           <Box
             sx={{
               height: "80%",
               overflow: "auto",
+              "&::-webkit-scrollbar": {
+                width: "0.6em",
+              },
+              "&::-webkit-scrollbar-track": {
+                boxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+                webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#ffffff",
+                borderRadius: "25px",
+              },
             }}
           >
             <ul
@@ -81,6 +98,24 @@ const Page2 = () => {
                     color: "#f9adc0",
                   }}
                 >
+                  Mark your calendars! WADLA 3.0 is back and better than ever
+                  from December 11th to 16th, 2023!
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.8rem",
+                    marginTop: "-10px",
+                  }}
+                >
+                  Date: [20 June, 2023]
+                </p>
+              </li>
+              <li>
+                <p
+                  style={{
+                    color: "#f9adc0",
+                  }}
+                >
                   Wadla 3.0 is coming soon, stay tuned for more updates.
                 </p>
                 <p
@@ -89,7 +124,7 @@ const Page2 = () => {
                     marginTop: "-10px",
                   }}
                 >
-                  Date: [15 June 2023]
+                  Date: [15 June, 2023]
                 </p>
               </li>
             </ul>
@@ -108,7 +143,9 @@ const Page2 = () => {
             marginTop: "5%",
           }}
         >
-          <h1>Organizing Commitee</h1>
+          <Element name="Commitee">
+            <h1>Organizing Commitee</h1>
+          </Element>
         </Box>
       </Box>
     </Box>

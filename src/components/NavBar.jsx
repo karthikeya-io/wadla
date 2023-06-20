@@ -13,8 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../assets/iiits.webp";
+import { Link } from "react-scroll";
 
-const pages = ["About", "Speakers", "News", "Commitee"];
+const pages = ["About", "Speakers", "News", "Archive", "Schedule", "Register"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -111,9 +112,18 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
+                  <Link
+                    activeClass="active"
+                    to={page}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>
@@ -155,13 +165,22 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                <Link
+                  activeClass="active"
+                  to={page}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
                 >
-                  {page}
-                </Button>
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
               ))}
             </Box>
           </Toolbar>
