@@ -212,7 +212,10 @@ const Page3 = () => {
             backgroundColor: "#242B2E",
             color: "#FFFFFF",
             borderRadius: "25px",
-            maxHeight: "550px",
+            maxHeight: {
+              lg: "550px",
+              xs: "auto",
+            },
             height: {
               lg: "96%",
             },
