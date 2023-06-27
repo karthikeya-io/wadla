@@ -5,9 +5,13 @@ import img2 from "../assets/temp/download.jpeg";
 import img3 from "../assets/temp/Industry_all_c.jpg";
 import { Box } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
+import agricultureImg from "../assets/agriculture.png";
+import defenceImg from "../assets/defence.png";
+import graphsImg from "../assets/graphs.png";
+import rlImg from "../assets/rl.png";
 
 const Page1 = () => {
-  const banners = [img1, img2, img3];
+  const banners = [graphsImg, defenceImg, agricultureImg, rlImg];
   const caption =
     "Embrace the AI Revolution with World-Leading Experts at WADLA 3.0";
 
