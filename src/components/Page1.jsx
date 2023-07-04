@@ -1,14 +1,12 @@
 import React from "react";
 import BannerCarousel from "./BannerCarousel";
-import img1 from "../assets/temp/Academia_all_foreign.jpg";
-import img2 from "../assets/temp/download.jpeg";
-import img3 from "../assets/temp/Industry_all_c.jpg";
 import { Box } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
-import agricultureImg from "../assets/agriculture.png";
-import defenceImg from "../assets/defence.png";
-import graphsImg from "../assets/graphs.png";
-import rlImg from "../assets/rl.png";
+import agricultureImg from "../assets/agriculture.webp";
+import defenceImg from "../assets/defence.webp";
+import graphsImg from "../assets/graphs.webp";
+import rlImg from "../assets/rl.webp";
+import banner1 from "../assets/banner1.webp";
 
 const Page1 = () => {
   const banners = [graphsImg, defenceImg, agricultureImg, rlImg];
