@@ -144,8 +144,105 @@ const Page2 = () => {
           }}
         >
           <Element name="Commitee">
-            <h1>Organizing Commitee</h1>
+            <h1>Organizers</h1>
           </Element>
+          <Box
+            sx={{
+              height: "80%",
+              overflow: "auto",
+              "&::-webkit-scrollbar": {
+                width: "0.6em",
+              },
+              "&::-webkit-scrollbar-track": {
+                boxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+                webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#ffffff",
+                borderRadius: "25px",
+              },
+            }}
+          >
+            <ul
+              style={{
+                textAlign: "left",
+                paddingLeft: "20px",
+              }}
+            >
+              <li>
+                <p
+                  style={{
+                    color: "#f9adc0",
+                  }}
+                >
+                  <a
+                    href="https://www.iiits.ac.in/people/regular-faculty/dr-rakesh-kumar-sanodiya/"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "#f9adc0",
+                    }}
+                  >
+                    Dr. Rakesh Kumar Sanodiya
+                  </a>
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.95rem",
+                    marginTop: "-10px",
+                  }}
+                >
+                  Convener |{" "}
+                  <a
+                    href="mailto:"
+                    target="_blank"
+                    style={{
+                      color: "#f9adc0",
+                      textDecoration: "none",
+                    }}
+                  >
+                    rakesh.s@iiits.in
+                  </a>
+                </p>
+              </li>
+              <li>
+                <p
+                  style={{
+                    color: "#f9adc0",
+                  }}
+                >
+                  <a
+                    href="https://www.iiits.ac.in/people/regular-faculty/dr-arun-pv/"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "#f9adc0",
+                    }}
+                  >
+                    Dr Arun PV
+                  </a>
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.95rem",
+                    marginTop: "-10px",
+                  }}
+                >
+                  Co-Convener |{" "}
+                  <a
+                    href="mailto:"
+                    target="_blank"
+                    style={{
+                      color: "#f9adc0",
+                      textDecoration: "none",
+                    }}
+                  >
+                    arun.pv@iiits.in
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </Box>
         </Box>
       </Box>
     </Box>
