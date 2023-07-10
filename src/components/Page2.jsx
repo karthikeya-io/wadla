@@ -3,6 +3,11 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import SpeakersCarousel from "./SpeakersCarousel";
 import { Box } from "@mui/material";
 import { Element } from "react-scroll";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Page2 = () => {
   return (
@@ -144,12 +149,12 @@ const Page2 = () => {
           }}
         >
           <Element name="Commitee">
-            <h1>Organizers</h1>
+            <h1>Organizing Commitee</h1>
           </Element>
           <Box
             sx={{
-              height: "80%",
-              overflow: "auto",
+              maxHeight: "350px",
+              overflowY: "scroll",
               "&::-webkit-scrollbar": {
                 width: "0.6em",
               },
@@ -163,85 +168,708 @@ const Page2 = () => {
               },
             }}
           >
-            <ul
-              style={{
-                textAlign: "left",
-                paddingLeft: "20px",
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+                borderRadius: "15px 15px 0px 0px",
+                marginTop: "25px",
               }}
             >
-              <li>
-                <p
-                  style={{
-                    color: "#f9adc0",
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
                   }}
                 >
-                  <a
-                    href="https://www.iiits.ac.in/people/regular-faculty/dr-rakesh-kumar-sanodiya/"
-                    target="_blank"
-                    style={{
-                      textDecoration: "none",
-                      color: "#f9adc0",
-                    }}
-                  >
-                    Dr. Rakesh Kumar Sanodiya
-                  </a>
-                </p>
-                <p
-                  style={{
-                    fontSize: "0.95rem",
-                    marginTop: "-10px",
+                  Chief Patron and Chairperson
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
                   }}
                 >
-                  Convener |{" "}
-                  <a
-                    href="mailto:"
-                    target="_blank"
+                  <ul
                     style={{
-                      color: "#f9adc0",
-                      textDecoration: "none",
+                      textAlign: "left",
+                      paddingLeft: "20px",
                     }}
                   >
-                    rakesh.s@iiits.in
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p
-                  style={{
-                    color: "#f9adc0",
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                        }}
+                      >
+                        <a
+                          href="https://www.iiits.ac.in/home/administration/director/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Prof. G. Kannabiran
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        Director, IIIT Sri City
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
                   }}
                 >
-                  <a
-                    href="https://www.iiits.ac.in/people/regular-faculty/dr-arun-pv/"
-                    target="_blank"
-                    style={{
-                      textDecoration: "none",
-                      color: "#f9adc0",
-                    }}
-                  >
-                    Dr Arun PV
-                  </a>
-                </p>
-                <p
-                  style={{
-                    fontSize: "0.95rem",
-                    marginTop: "-10px",
+                  Technical Chairs
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
                   }}
                 >
-                  Co-Convener |{" "}
-                  <a
-                    href="mailto:"
-                    target="_blank"
+                  <ul
                     style={{
-                      color: "#f9adc0",
-                      textDecoration: "none",
+                      textAlign: "left",
+                      paddingLeft: "20px",
                     }}
                   >
-                    arun.pv@iiits.in
-                  </a>
-                </p>
-              </li>
-            </ul>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                        }}
+                      >
+                        <a
+                          href="http://www.cse.iitm.ac.in/profile.php?arg=Nw=="
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Prof. C. Chandra Sekhar
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIT Madras
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://wadla.in"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Prof. B Krishna Mohan
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIT Bombay
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://www.linkedin.com/in/rama-vedantam-291b9831/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr. Rama Vendatam
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        AI Researcher, New York University , USA
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://wadla.in"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Prof. Jimson Mathew
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIT Patna
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://wadla.in"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Prof. Ram Bilas Pachori
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIT Indore
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="#"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr. Sriparna Saha
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      ></p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://www.iiits.ac.in/people/regular-faculty/dr-anish-chand-turlapaty/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr. Anish Chand Turlapaty
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIIT SriCity
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://faculty.iitmandi.ac.in/~dineshsingh/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr. Dinesh Singh
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIT Mandi
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  Workshop Chairs
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  <ul
+                    style={{
+                      textAlign: "left",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://www.iiits.ac.in/people/regular-faculty/dr-rakesh-kumar-sanodiya/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr. Rakesh Kumar Sanodiya
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        Convener |{" "}
+                        <a
+                          href="mailto:"
+                          target="_blank"
+                          style={{
+                            color: "#f9adc0",
+                            textDecoration: "none",
+                          }}
+                        >
+                          rakesh.s@iiits.in
+                        </a>
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://www.iiits.ac.in/people/regular-faculty/dr-arun-pv/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr Arun PV
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        Co-Convener |{" "}
+                        <a
+                          href="mailto:"
+                          target="_blank"
+                          style={{
+                            color: "#f9adc0",
+                            textDecoration: "none",
+                          }}
+                        >
+                          arun.pv@iiits.in
+                        </a>
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  Finance Chairs
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  <ul
+                    style={{
+                      textAlign: "left",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        Dr. Piyush Joshi
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIIT Sri City
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  Publicity Chairs
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  <ul
+                    style={{
+                      textAlign: "left",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        Dr. Matloob Khusi
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        Sydney University, Australia
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        Dr Nikhil Tripathi
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIIT Sri City
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+                borderRadius: "0px 0px 15px 15px",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  Registration Chairs
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  <ul
+                    style={{
+                      textAlign: "left",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <a
+                          href="https://www.iiits.ac.in/people/regular-faculty/dr-pavan-kumar-b-n/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Dr. Pavan Kumar B N
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIIT Sri City
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        Satya Rajendra Singh
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        IIIT Sri City
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </Box>
         </Box>
       </Box>
