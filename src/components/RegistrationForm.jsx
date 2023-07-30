@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   TextField,
   Select,
@@ -10,13 +10,13 @@ import {
   FormControlLabel,
   Typography,
   CircularProgress,
-  FormHelperText,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import { TEST_API_URL_REGISTRATION } from "../constants";
-import { Form } from "react-router-dom";
+import { RECAPTCHA_SITE_KEY, API_URL_REGISTRATION } from "../constants";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const RegistrationForm = () => {
+  const recaptchaRef = useRef();
   const [form, setForm] = useState({
     email: "",
     name: "",
@@ -24,6 +24,7 @@ const RegistrationForm = () => {
     affiliation: "",
     designation: "",
     registrationCategory: "",
+    mode: "",
     previousWorkshop: "",
     feedback: "",
     registrationFee: "",
@@ -43,9 +44,9 @@ const RegistrationForm = () => {
       body: data, // body data type must match "Content-Type" header
     });
     if (!response.ok) {
-      const message = `An error has occured: ${response.status}`;
+      const res = await response.json();
+      const message = `An error has occured: ${response.status} ${res.error}`;
       throw new Error(message);
-      alert(message);
     }
     return response.json(); // parses JSON response into native JavaScript objects
   }
@@ -53,6 +54,13 @@ const RegistrationForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
+    const recaptchaValue = recaptchaRef.current.getValue();
+    console.log(recaptchaValue);
+    if (!recaptchaValue) {
+      alert("Please verify that you are not a robot");
+      setLoading(false);
+      return;
+    }
     const formData = new FormData();
     formData.append("email", form.email);
     formData.append("name", form.name);
@@ -60,6 +68,7 @@ const RegistrationForm = () => {
     formData.append("affiliation", form.affiliation);
     formData.append("designation", form.designation);
     formData.append("registrationCategory", form.registrationCategory);
+    formData.append("mode", form.mode);
     formData.append("previousWorkshop", form.previousWorkshop);
     formData.append("feedback", form.feedback);
     formData.append("registrationFee", form.registrationFee);
@@ -68,20 +77,51 @@ const RegistrationForm = () => {
     formData.append("receipt", receipt);
     formData.append("proof", proof);
     formData.append("confirm", form.confirm);
+    formData.append("recaptchaValue", recaptchaValue);
     console.log(form);
     console.log(formData);
     console.log(formData.get("email"));
-    postData(TEST_API_URL_REGISTRATION, formData)
+    postData(API_URL_REGISTRATION, formData)
       .then((data) => {
         console.log(data); // JSON data parsed by `data.json()` call
         alert("Registration Successful");
         setLoading(false);
+        setForm({
+          email: "",
+          name: "",
+          phoneNumber: "",
+          affiliation: "",
+          designation: "",
+          registrationCategory: "",
+          mode: "",
+          previousWorkshop: "",
+          feedback: "",
+          registrationFee: "",
+          transactionNumber: "",
+          registrationDate: "",
+          confirm: false,
+        });
       })
       .catch((error) => {
         console.error(error);
         alert(error);
         setLoading(false);
       });
+    setForm({
+      email: "",
+      name: "",
+      phoneNumber: "",
+      affiliation: "",
+      designation: "",
+      registrationCategory: "",
+      mode: "",
+      previousWorkshop: "",
+      feedback: "",
+      registrationFee: "",
+      transactionNumber: "",
+      registrationDate: "",
+      confirm: false,
+    });
   };
 
   const handleChange = (event) => {
@@ -103,7 +143,7 @@ const RegistrationForm = () => {
         margin: "20px",
         backgroundColor: "#f5f5f5",
         // make background color translucent
-        backgroundColor: "rgba(245, 245, 245, 0.9)",
+        backgroundColor: "rgba(245, 245, 245, 0.95)",
         borderRadius: "15px",
         maxWidth: "95%",
         overflow: "hidden",
@@ -253,34 +293,58 @@ const RegistrationForm = () => {
             />
           </Box>
 
-          <FormControl required>
-            <InputLabel id="registration-category-label">
-              Registration Category
-            </InputLabel>
-            <Select
-              labelId="registration-category-label"
-              id="registration-category"
-              name="registrationCategory"
-              value={form.registrationCategory}
-              onChange={handleChange}
-              label="Registration Category"
-            >
-              <MenuItem value="Student - India">Student - India</MenuItem>
-              <MenuItem value="Faculty/Educator - India">
-                Faculty/Educator - India
-              </MenuItem>
-              <MenuItem value="Industry/R&D Person - India">
-                Industry/R&D Person - India
-              </MenuItem>
-              <MenuItem value="Student - Foreign">Student - Foreign</MenuItem>
-              <MenuItem value="Faculty/Educator - Foreign">
-                Faculty/Educator - Foreign
-              </MenuItem>
-              <MenuItem value="Industry/R&D Person - Foreign">
-                Industry/R&D Person - Foreign
-              </MenuItem>
-            </Select>
-          </FormControl>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <FormControl required>
+              <InputLabel id="registration-category-label">
+                Registration Category
+              </InputLabel>
+              <Select
+                labelId="registration-category-label"
+                id="registration-category"
+                name="registrationCategory"
+                value={form.registrationCategory}
+                onChange={handleChange}
+                label="Registration Category"
+              >
+                <MenuItem value="Student - India">Student - India</MenuItem>
+                <MenuItem value="Faculty/Educator - India">
+                  Faculty/Educator - India
+                </MenuItem>
+                <MenuItem value="Industry/R&D Person - India">
+                  Industry/R&D Person - India
+                </MenuItem>
+                <MenuItem value="Student - Foreign">Student - Foreign</MenuItem>
+                <MenuItem value="Faculty/Educator - Foreign">
+                  Faculty/Educator - Foreign
+                </MenuItem>
+                <MenuItem value="Industry/R&D Person - Foreign">
+                  Industry/R&D Person - Foreign
+                </MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl required>
+              <InputLabel id="registration-category-label">
+                Online/Offline
+              </InputLabel>
+              <Select
+                labelId="mode-label"
+                id="mode"
+                name="mode"
+                value={form.mode}
+                onChange={handleChange}
+                label="Registration Category"
+              >
+                <MenuItem value="online">Online</MenuItem>
+                <MenuItem value="offline">Offline</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
 
           <FormControl required>
             <InputLabel id="previous-workshop-label">
@@ -346,14 +410,15 @@ const RegistrationForm = () => {
           </Box>
 
           <Typography variant="body1" sx={{ marginTop: "10px" }}>
-            Upload the following documents in PDF format:
+            Upload the following documents in an image format(jpg, png, etc.) or
+            PDF format:
           </Typography>
 
           <Button variant="contained" component="label">
             Upload Registration Fee Transaction Receipt
             <input
               type="file"
-              accept=".pdf"
+              // accept=".pdf"
               name="receipt"
               onChange={(e) => setReceipt(e.target.files[0])}
               style={{
@@ -363,10 +428,11 @@ const RegistrationForm = () => {
             />
           </Button>
           <Typography variant="body1" sx={{ marginTop: "10px" }}>
-            Upload the following documents in an image format(jpg, png, etc.):
+            Upload the following documents in an image format(jpg, png, etc.) or
+            PDF format:
           </Typography>
           <Button variant="contained" component="label">
-            Upload Proof of Student/Faculty
+            Upload Proof of Student/Faculty/Industry
             <input
               required
               type="file"
@@ -391,6 +457,7 @@ const RegistrationForm = () => {
             label="I confirm that the information provided by me in this form is correct."
           />
 
+          <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} />
           <Button variant="contained" color="primary" type="submit">
             Submit
           </Button>
