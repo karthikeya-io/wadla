@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { height } from "@mui/system";
 import "../App.css";
+import { Box } from "@mui/material";
 
 const BannerCarousel = ({ banners }) => {
   var settings = {
@@ -28,10 +29,20 @@ const BannerCarousel = ({ banners }) => {
     >
       <Slider {...settings}>
         {banners.map((banner, index) => (
-          <div key={index}>
+          <Box
+            key={index}
+            sx={{
+              height: {
+                xs: "300px",
+                sm: "350px",
+                md: "500px",
+                lg: "500px",
+              },
+            }}
+          >
             <img
               style={{
-                height: "500px",
+                height: "100%",
                 width: "100%",
                 borderRadius: "25px",
                 margin: "auto",
@@ -39,7 +50,7 @@ const BannerCarousel = ({ banners }) => {
               src={banner}
               alt={`Banner ${index}`}
             />
-          </div>
+          </Box>
         ))}
       </Slider>
     </div>

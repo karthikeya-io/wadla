@@ -1,6 +1,6 @@
 import React from "react";
 import BannerCarousel from "./BannerCarousel";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
 import agricultureImg from "../assets/agriculture.webp";
 import defenceImg from "../assets/defence.webp";
@@ -26,8 +26,32 @@ const Page1 = () => {
     >
       <Box
         sx={{
+          display: {
+            xs: "flex",
+            md: "none",
+          },
+          width: "100%",
+        }}
+      >
+        <Typography
+          variant="h2"
+          sx={{
+            width: "100%",
+            margin: "auto",
+            padding: "2.5%",
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: "1rem",
+          }}
+        >
+          3rd International Research Workshop on Advances in Deep Learning and
+          Applications
+        </Typography>
+      </Box>
+      <Box
+        sx={{
           width: {
-            xs: "90%",
+            xs: "86%",
             sm: "95%",
             md: "55%",
             lg: "65%",
@@ -41,7 +65,7 @@ const Page1 = () => {
           width: {
             xs: "95%",
             sm: "95%",
-            md: "45%",
+            md: "40%",
             lg: "30%",
           },
           margin: "auto",
