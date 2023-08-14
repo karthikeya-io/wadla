@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { API_URL } from "../constants";
 import LinearProgress from "@mui/material/LinearProgress";
+import { Box } from "@mui/material";
 
 const SpeakersCarousel = () => {
   const [speakers, setSpeakers] = useState([]);
@@ -95,7 +96,13 @@ const SpeakersCarousel = () => {
       >
         Academic Experts
       </h3>
-      <div>
+      <Box
+        sx={{
+          padding: {
+            xs: "15px",
+          },
+        }}
+      >
         {loading ? (
           <LinearProgress color="secondary" />
         ) : (
@@ -152,7 +159,7 @@ const SpeakersCarousel = () => {
             ))}
           </Slider>
         )}
-      </div>
+      </Box>
       <br />
       <h3
         style={{
@@ -161,7 +168,13 @@ const SpeakersCarousel = () => {
       >
         Industry Experts
       </h3>
-      <div>
+      <Box
+        sx={{
+          padding: {
+            xs: "15px",
+          },
+        }}
+      >
         {loading ? (
           <LinearProgress color="secondary" />
         ) : (
@@ -218,7 +231,7 @@ const SpeakersCarousel = () => {
             ))}
           </Slider>
         )}
-      </div>
+      </Box>
       <div>{/* <button className="btn btn-primary">View All</button> */}</div>
     </div>
   );

@@ -8,6 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const Page2 = () => {
   return (
@@ -77,6 +78,7 @@ const Page2 = () => {
           <Box
             sx={{
               height: "80%",
+              maxHeight: "250px",
               overflow: "auto",
               "&::-webkit-scrollbar": {
                 width: "0.6em",
@@ -97,6 +99,38 @@ const Page2 = () => {
                 paddingLeft: "20px",
               }}
             >
+              <li>
+                <p
+                  style={{
+                    color: "#f9adc0",
+                  }}
+                >
+                  <a
+                    href="https://www.youtube.com/playlist?list=PLFVY9UMYveR47NPTDEAyJFAeYhswCwJ3T"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "#f9adc0",
+                    }}
+                  >
+                    WADLA 2.0 Talk series is released
+                    <LaunchIcon
+                      sx={{
+                        fontSize: "1rem",
+                        marginLeft: "5px",
+                      }}
+                    />
+                  </a>
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.8rem",
+                    marginTop: "-10px",
+                  }}
+                >
+                  Date: [11 July, 2023]
+                </p>
+              </li>
               <li>
                 <p
                   style={{
@@ -228,7 +262,7 @@ const Page2 = () => {
                             color: "#f9adc0",
                           }}
                         >
-                          Prof. G. Kannabiran
+                          Prof.D.V.L.N. Somayajulu
                         </a>
                       </p>
                       <p
@@ -292,6 +326,33 @@ const Page2 = () => {
                       <p
                         style={{
                           color: "#f9adc0",
+                        }}
+                      >
+                        <a
+                          href="https://www.ee.ntut.edu.tw/English/teacher/teacher2.php?tsn=5"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Prof. Leehter Yao
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        National Taipei University
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                          marginTop: "-10px",
                         }}
                       >
                         <a
