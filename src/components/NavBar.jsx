@@ -64,24 +64,35 @@ function ResponsiveAppBar() {
               }}
             />
 
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
+            <div
+              style={{
+                textAlign: "center",
+                maxWidth: "360px",
+                lineHeight: "1.5",
               }}
             >
-              WADLA 3.0
-            </Typography>
-
+              <Typography
+                variant="body2"
+                component="p"
+                sx={{
+                  marginBottom: "-8px",
+                  marginLeft: "5px",
+                  display: { xs: "none", md: "flex" },
+                }}
+              >
+                3rd International Research Workshop on Advances in
+              </Typography>
+              <Typography
+                variant="h6"
+                component="h2"
+                sx={{
+                  marginLeft: "25px",
+                  display: { xs: "none", md: "flex" },
+                }}
+              >
+                Deep Learning and Applications
+              </Typography>
+            </div>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -155,8 +166,9 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             >
-              WADLA 3.0
+              WADLA
             </Typography>
+
             <Box
               sx={{
                 flexGrow: 1,
