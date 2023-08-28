@@ -136,6 +136,19 @@ function ResponsiveAppBar() {
                     </MenuItem>
                   </Link>
                 ))}
+                <a
+                  href="/login"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <MenuItem key="Login" onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">Login</Typography>
+                  </MenuItem>
+                </a>
               </Menu>
             </Box>
             <Avatar
@@ -194,6 +207,19 @@ function ResponsiveAppBar() {
                   </Button>
                 </Link>
               ))}
+              <a
+                href="/login"
+                style={{ textDecoration: "none", color: "inherit", marginTop: "15px"}}
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <MenuItem key="Login">
+                  <Typography textAlign="center">Login</Typography>
+                </MenuItem>
+              </a>
             </Box>
           </Toolbar>
         </Container>
