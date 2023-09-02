@@ -6,6 +6,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [form, setForm] = useState({
@@ -24,7 +25,7 @@ const LoginForm = () => {
       },
       body: JSON.stringify(data),
     });
-    if(response.ok) {
+    if (response.ok) {
       return response.json();
     } else {
       const res = await response.json();
@@ -36,7 +37,7 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    alert("login successful")
+    alert("login successful");
     setForm({
       email: "",
       password: "",
@@ -50,15 +51,17 @@ const LoginForm = () => {
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
-          maxWidth: "100%",
+          width: {
+            xs: "100%",
+            md: "550px",
+          },
           padding: "20px",
-          // make background color translucent
           backgroundColor: "rgba(245, 245, 245, 0.95)",
           borderRadius: "15px",
           overflow: "hidden",
           margin: {
-            xs: "60px 20px"
-          }
+            xs: "60px 20px",
+          },
         }}
       >
         {loading ? (
@@ -149,20 +152,16 @@ const LoginForm = () => {
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
               />
             </Box>
-            <Box sx={{ marginBottom: "10px" }}>
-              <Typography
-                // make pointer cursor
-                sx={{
-                  marginTop: "10px",
-                  color: "#3f51b5",
-                  cursor: "pointer",
-                  marginLeft: "10px",
-                }}
-
-              >
-                Forgot Password?
-              </Typography>
-            </Box>
+                <Link to="/emailvalidation" style={{ textDecoration: "none" }}>
+                  <Typography
+                    sx={{
+                      marginTop: "10px",
+                      color: "#3f51b5",
+                    }}
+                  >
+                    Forgot Password?/ Set Password
+                  </Typography>
+                </Link>
             <Button variant="contained" type="submit">
               Login
             </Button>

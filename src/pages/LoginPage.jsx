@@ -2,8 +2,9 @@ import React from "react";
 import { Box, Button } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import LoginForm from "../components/LoginForm";
+import ResetPasswordForm from "../components/ResetPasswordForm";
 
-const LoginPage = () => {
+const LoginPage = ({page}) => {
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -52,7 +53,8 @@ const LoginPage = () => {
             maxWidth: "100%",
           }}
         >
-            <LoginForm />
+            {page === "login" && <LoginForm /> }
+            {page === "emailvalidation" && <ResetPasswordForm /> }
         </Box>
       </Box>
     </>
