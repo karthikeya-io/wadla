@@ -14,8 +14,17 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../assets/iiits.webp";
 import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
-const pages = ["About", "Speakers", "News", "Archive", "Schedule", "Register"];
+const pages = [
+  "About",
+  "Speakers",
+  "News",
+  "Archive",
+  "Schedule",
+  "Login",
+  "Register",
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -122,33 +131,35 @@ function ResponsiveAppBar() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <Link
-                    activeClass="active"
-                    to={page}
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                  >
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  </Link>
-                ))}
-                <a
-                  href="/login"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                  activeClass="active"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <MenuItem key="Login" onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">Login</Typography>
-                  </MenuItem>
-                </a>
+                {pages.map((page) =>
+                  page === "Login" ? (
+                    <RouterLink
+                      to="/login"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                      }}
+                      activeClass="active"
+                    >
+                      <MenuItem key={page}>
+                        <Typography textAlign="center">{page}</Typography>
+                      </MenuItem>
+                    </RouterLink>
+                  ) : (
+                    <Link
+                      activeClass="active"
+                      to={page === "Login" ? "/login" : page}
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >
+                      <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page}</Typography>
+                      </MenuItem>
+                    </Link>
+                  )
+                )}
               </Menu>
             </Box>
             <Avatar
@@ -189,37 +200,35 @@ function ResponsiveAppBar() {
                 justifyContent: "flex-end",
               }}
             >
-              {pages.map((page) => (
-                <Link
-                  activeClass="active"
-                  to={page}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+              {pages.map((page) =>
+                page === "Login" ? (
+                  <RouterLink
+                    to="/login"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                    activeClass="active"
                   >
-                    {page}
-                  </Button>
-                </Link>
-              ))}
-              <a
-                href="/login"
-                style={{ textDecoration: "none", color: "inherit", marginTop: "15px"}}
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                <MenuItem key="Login">
-                  <Typography textAlign="center">Login</Typography>
-                </MenuItem>
-              </a>
+                    <MenuItem key={page}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </MenuItem>
+                  </RouterLink>
+                ) : (
+                  <Link
+                    activeClass="active"
+                    to={page === "Login" ? "/login" : page}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </MenuItem>
+                  </Link>
+                )
+              )}
             </Box>
           </Toolbar>
         </Container>
