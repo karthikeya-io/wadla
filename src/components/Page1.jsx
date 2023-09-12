@@ -2,14 +2,14 @@ import React from "react";
 import BannerCarousel from "./BannerCarousel";
 import { Box, Typography } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
-import agricultureImg from "../assets/agriculture.webp";
 import defenceImg from "../assets/defence.webp";
 import graphsImg from "../assets/graphs.webp";
 import rlImg from "../assets/rl.webp";
 import banner1 from "../assets/banner1_red.webp";
+import banner0 from "../assets/wadla-broucher.webp";
 
 const Page1 = () => {
-  const banners = [banner1, graphsImg, defenceImg, agricultureImg, rlImg];
+  const banners = [banner0, graphsImg, defenceImg, rlImg];
   const caption =
     "Embrace the AI Revolution with World-Leading Experts at WADLA 3.0";
 

@@ -22,7 +22,7 @@ const pages = [
   "News",
   "Archive",
   "Schedule",
-  "Login",
+  // "Login",
   "Register",
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

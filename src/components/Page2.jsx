@@ -230,7 +230,81 @@ const Page2 = () => {
                     fontFamily: "comic neue",
                   }}
                 >
-                  Chief Patron and Chairperson
+                  Chief Patron
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  sx={{
+                    color: "#FFFFFF",
+                    textAlign: "justify",
+                    fontSize: "1rem",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  <ul
+                    style={{
+                      textAlign: "left",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <li>
+                      <p
+                        style={{
+                          color: "#f9adc0",
+                        }}
+                      >
+                        <a
+                          href="https://www.iiits.ac.in/home/governance/chairman/"
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: "#f9adc0",
+                          }}
+                        >
+                          Shri M Balasubramaniam
+                        </a>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          marginTop: "-20px",
+                        }}
+                      >
+                        Chariman BoG, IIIT Sri City
+                      </p>
+                    </li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              sx={{
+                color: "#FFFFFF",
+                backgroundColor: "#ffffff1f",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      color: "#f0e68c",
+                    }}
+                  />
+                }
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                sx={{
+                  backgroundColor: "#ffffff1f",
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#f0e68c",
+                    fontFamily: "comic neue",
+                  }}
+                >
+                  Patron & Mentor
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
