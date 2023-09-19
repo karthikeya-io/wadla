@@ -5,11 +5,10 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import defenceImg from "../assets/defence.webp";
 import graphsImg from "../assets/graphs.webp";
 import rlImg from "../assets/rl.webp";
-import banner1 from "../assets/banner1_red.webp";
-import banner0 from "../assets/wadla-broucher.webp";
+import banner1 from "../assets/banner1.webp";
 
 const Page1 = () => {
-  const banners = [banner0, graphsImg, defenceImg, rlImg];
+  const banners = [banner1, graphsImg, defenceImg, rlImg];
   const caption =
     "Embrace the AI Revolution with World-Leading Experts at WADLA 3.0";
 
@@ -183,6 +182,37 @@ const Page1 = () => {
                 >
                   {" "}
                   Indian Institute of Information Technoloyg, Sri City{" "}
+                  {<LaunchIcon />}
+                </a>
+              </span>
+            </h3>
+            <h3
+              style={{
+                margin: "0px",
+                padding: "5px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              Sponsored by:
+              <span
+                style={{
+                  color: "#f9adc0",
+                  opacity: "0.8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                <a
+                  style={{
+                    color: "#f9adc0",
+                    textDecoration: "none",
+                  }}
+                  href="https://serb.gov.in/"
+                  target="_blank"
+                >
+                  {" "}
+                  SERB, DST - GoI
                   {<LaunchIcon />}
                 </a>
               </span>

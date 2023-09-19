@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import SpeakersCarousel from "./SpeakersCarousel";
 import { Box } from "@mui/material";
@@ -11,6 +11,33 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LaunchIcon from "@mui/icons-material/Launch";
 
 const Page2 = () => {
+  function ScrollingText() {
+    const containerStyle = {
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      position: "relative",
+      width: "100%",
+      marginTop: ".5%",
+    };
+
+    const textStyle = {
+      display: "inline-block",
+      color: "#6B8E23",
+      whiteSpace: "nowrap",
+      animation: "scrollText 25s linear infinite",
+      fontSize: "1.2rem",
+      paddingLeft: "100%",
+    };
+
+    return (
+      <div style={containerStyle}>
+        <Typography variant="h4" component="span" style={textStyle}>
+          Deadline for Registration is 30th September 2023.
+        </Typography>
+      </div>
+    );
+  }
+
   return (
     <Box
       sx={{
@@ -20,12 +47,14 @@ const Page2 = () => {
         width: "100%",
       }}
     >
+      {/* scroll text  */}
+      <ScrollingText />
       <Box
         sx={{
           height: "auto",
           position: "relative",
           color: "#FFFFFF",
-          padding: "2.5%",
+          padding: "1% 2.5% 2.5%2.5%",
           width: {
             xs: "95%",
             sm: "95%",
@@ -50,7 +79,7 @@ const Page2 = () => {
       <Box
         sx={{
           color: "#FFFFFF",
-          padding: "2.5%",
+          padding: "1.5% 2.5% 2.5% 2.5%",
           width: {
             xs: "95%",
             sm: "95%",
@@ -78,7 +107,7 @@ const Page2 = () => {
           <Box
             sx={{
               height: "80%",
-              maxHeight: "250px",
+              maxHeight: "350px",
               overflow: "auto",
               "&::-webkit-scrollbar": {
                 width: "0.6em",
@@ -99,6 +128,38 @@ const Page2 = () => {
                 paddingLeft: "20px",
               }}
             >
+              <li>
+                <p
+                  style={{
+                    color: "#f9adc0",
+                  }}
+                >
+                  <a
+                    href="https://drive.google.com/file/d/1E0uYTEsMQhgelRa_4aVB_9J8Ytq3ef-L/view?usp=sharing"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "#f9adc0",
+                    }}
+                  >
+                    WADLA 3.0 Brochure
+                    <LaunchIcon
+                      sx={{
+                        fontSize: "1rem",
+                        marginLeft: "5px",
+                      }}
+                    />
+                  </a>
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.8rem",
+                    marginTop: "-10px",
+                  }}
+                >
+                  Date: [15 September, 2023]
+                </p>
+              </li>
               <li>
                 <p
                   style={{
@@ -1008,6 +1069,18 @@ const Page2 = () => {
           </Box>
         </Box>
       </Box>
+      <style>
+        {`
+          @keyframes scrollText {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+        `}
+      </style>
     </Box>
   );
 };
