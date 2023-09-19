@@ -11,11 +11,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="register" element={<RegistrationPage />} />
-        {/* <Route
+        <Route
           path="emailvalidation"
           element={<LoginPage page={"emailvalidation"} />}
-        /> */}
-        {/* <Route path="login" element={<LoginPage page={"login"} />} /> */}
+        />
+        <Route path="login" element={<LoginPage page={"login"} />} />
         {/* <Route path="about" element={<h1>About</h1>} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
