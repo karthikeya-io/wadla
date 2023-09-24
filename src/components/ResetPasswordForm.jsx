@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { OTP_ENDPOINT, RESET_PASSWORD_ENDPOINT } from "../constants";
 
 const ResetPasswordForm = () => {
   const [email, setEmail] = useState("");
@@ -61,16 +62,27 @@ const ResetPasswordForm = () => {
   const handleSendOTP = (e) => {
     e.preventDefault();
     setLoading(true);
-    alert("OTP sent");
-    setTimer(180);
-    setIsTimerActive(true);
-    setLoading(false);
-    setOTPSent(true);
+    postData(OTP_ENDPOINT, {
+      email: email,
+    })
+      .then((data) => {
+        console.log(data);
+        alert("OTP sent");
+        setOTPSent(true);
+        setTimer(180);
+        setIsTimerActive(true);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+        setLoading(false);
+      });
   };
 
   const handleVerifyOTP = (e) => {
     e.preventDefault();
-    if(form.password.length < 6) {
+    if (form.password.length < 6) {
       alert("Password must be atleast 6 characters long");
       return;
     }
@@ -79,8 +91,22 @@ const ResetPasswordForm = () => {
       return;
     }
     setLoading(true);
-    alert("Password changed");
-    setLoading(false);
+    postData(RESET_PASSWORD_ENDPOINT, {
+      email: email,
+      otp: otp,
+      password: form.password,
+    })
+      .then((data) => {
+        console.log(data);
+        alert(data.message);
+        setLoading(false);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+        setLoading(false);
+      });
     setOTPSent(false);
     setOTP("");
     setEmail("");

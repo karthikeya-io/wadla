@@ -99,7 +99,7 @@ const PaymentTable = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <h3>Foreign Participants Fee Payment Information</h3>
-          <p>BANK NAME: IIIT SRI CITY CHITTOOR OPEX A/C</p>
+          <p>ACCOUNT NAME: IIIT SRI CITY CHITTOOR OPEX A/C</p>
           <p>BANK ACCOUNT NUMBER: 38329375681</p>
           <p>IFSC CODE: SBIN0016527</p>
           <p>MICR CODE: 517002825</p>

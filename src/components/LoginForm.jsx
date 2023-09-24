@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { LOGIN_ENDPOINT } from "../constants";
 
 const LoginForm = () => {
   const [form, setForm] = useState({
@@ -37,11 +38,36 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    alert("login successful");
-    setForm({
-      email: "",
-      password: "",
-    });
+
+    postData(LOGIN_ENDPOINT, form)
+      .then((data) => {
+        console.log(data);
+        if (data.status === "success") {
+          // navigate("/dashboard");
+          alert("login successful");
+          setForm({
+            email: "",
+            password: "",
+          });
+          setLoading(false);
+        } else {
+          alert("login failed");
+          setForm({
+            email: "",
+            password: "",
+          });
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("login failed");
+        setForm({
+          email: "",
+          password: "",
+        });
+        setLoading(false);
+      });
     setLoading(false);
   };
   return (
@@ -152,16 +178,16 @@ const LoginForm = () => {
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
               />
             </Box>
-                <Link to="/emailvalidation" style={{ textDecoration: "none" }}>
-                  <Typography
-                    sx={{
-                      marginTop: "10px",
-                      color: "#3f51b5",
-                    }}
-                  >
-                    Forgot Password?/ Set Password
-                  </Typography>
-                </Link>
+            <Link to="/emailvalidation" style={{ textDecoration: "none" }}>
+              <Typography
+                sx={{
+                  marginTop: "10px",
+                  color: "#3f51b5",
+                }}
+              >
+                Forgot Password?/ Set Password
+              </Typography>
+            </Link>
             <Button variant="contained" type="submit">
               Login
             </Button>
