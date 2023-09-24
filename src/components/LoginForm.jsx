@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { LOGIN_ENDPOINT } from "../constants";
 
 const LoginForm = () => {
   const [form, setForm] = useState({
@@ -38,7 +39,7 @@ const LoginForm = () => {
     e.preventDefault();
     setLoading(true);
 
-    postData("http://localhost:5000/api/signin-registerUser", form)
+    postData(LOGIN_ENDPOINT, form)
       .then((data) => {
         console.log(data);
         if (data.status === "success") {

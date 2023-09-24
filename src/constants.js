@@ -8,5 +8,6 @@ export const RECAPTCHA_SITE_KEY = "6LdYOzgnAAAAAArxzpDt3X-6kHfTN9I42H2jPkTx";
 export const OTP_ENDPOINT = "http://localhost:5000/api/otp";
 export const RESET_PASSWORD_ENDPOINT =
   "http://localhost:5000/api/reset-password";
+export const LOGIN_ENDPOINT = "http://localhost:5000/api/signin-registerUser";
 // export const TEST_API_URL_REGISTRATION =
 //   "http://localhost:5000/api/register/6473a8d750e038bfe765ab70";
