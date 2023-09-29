@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import LoginForm from "../components/LoginForm";
 import ResetPasswordForm from "../components/ResetPasswordForm";
 
 const LoginPage = ({page}) => {
+  const navigate = useNavigate();
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -28,7 +30,7 @@ const LoginPage = ({page}) => {
       >
         <Button
           variant="contained"
-          href="/"
+          onClick={() => navigate("/")}
           startIcon={<HomeIcon />}
           sx={{
             position: {

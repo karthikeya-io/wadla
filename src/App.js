@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import RecordingsPage from "./pages/RecordingsPage";
 import PrivateRoute from "./components/PrivateRoute";
 import LoggedInHome from "./pages/LoggedInHome";
+import NearestAttractions from "./pages/NearestAttractions";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           element={<LoginPage page={"emailvalidation"} />}
         />
         <Route path="login" element={<LoginPage page={"login"} />} />
+        <Route path="Nearest-Attractions" element={<NearestAttractions />} />
 
         <Route path="event" element={<PrivateRoute />}>
           <Route index element={<RecordingsPage />} />

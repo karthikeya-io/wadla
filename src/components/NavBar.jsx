@@ -26,6 +26,7 @@ function ResponsiveAppBar() {
     "News",
     "Archive",
     "Schedule",
+    "Nearest-Attractions",
     "Login",
     "Register",
   ]);
@@ -43,7 +44,7 @@ function ResponsiveAppBar() {
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user);
     if (user) {
-      setPages(["About", "Speakers", "News", "Archive", "Schedule", "Home"]);
+      setPages(["About", "Speakers", "News", "Archive", "Schedule", "Nearest-Attractions", "Home"]);
     }
   }, []);
 
@@ -148,9 +149,9 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page) =>
-                  page === "Login" || page === "Home" ? (
+                  (page === "Login" || page === "Home" || page === "Nearest-Attractions") ? (
                     <RouterLink
-                      to={page}
+                      to={`${"/"+page}`}
                       style={{
                         textDecoration: "none",
                         color: "inherit",
@@ -232,9 +233,9 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) =>
-                page === "Login" || page === "Home" ? (
+                page === "Login" || page === "Home" || page === "Nearest-Attractions"? (
                   <RouterLink
-                    to={page}
+                    to={`${"/"+page}`}
                     style={{
                       textDecoration: "none",
                       color: "inherit",

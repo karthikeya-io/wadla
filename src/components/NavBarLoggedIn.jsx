@@ -15,7 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../assets/iiits.webp";
 import { Link, useNavigate } from "react-router-dom";
 
-const pages = ["3.0 Home", "Home"];
+const pages = ["3.0 Home", "Home", "Nearest-Attractions"];
 
 function NavBarLoggedIn({ user }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
