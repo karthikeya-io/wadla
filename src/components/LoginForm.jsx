@@ -6,10 +6,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LOGIN_ENDPOINT } from "../constants";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -43,8 +44,11 @@ const LoginForm = () => {
       .then((data) => {
         console.log(data);
         if (data.status === "success") {
-          // navigate("/dashboard");
+          navigate("/home");
           alert("login successful");
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("timeOfLogin", Date.now());
           setForm({
             email: "",
             password: "",

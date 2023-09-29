@@ -15,21 +15,37 @@ import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../assets/iiits.webp";
 import { Link } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const pages = [
-  "About",
-  "Speakers",
-  "News",
-  "Archive",
-  "Schedule",
-  "Login",
-  "Register",
-];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Logout"];
 
 function ResponsiveAppBar() {
+  const [pages, setPages] = useState([
+    "About",
+    "Speakers",
+    "News",
+    "Archive",
+    "Schedule",
+    "Login",
+    "Register",
+  ]);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    localStorage.removeItem("timeOfLogin");
+    window.location.reload();
+  };
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    if (user) {
+      setPages(["About", "Speakers", "News", "Archive", "Schedule", "Home"]);
+    }
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -132,9 +148,9 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page) =>
-                  page === "Login" ? (
+                  page === "Login" || page === "Home" ? (
                     <RouterLink
-                      to="/login"
+                      to={page}
                       style={{
                         textDecoration: "none",
                         color: "inherit",
@@ -159,6 +175,21 @@ function ResponsiveAppBar() {
                       </MenuItem>
                     </Link>
                   )
+                )}
+                {user ? (
+                  <RouterLink
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                    activeClass="active"
+                  >
+                    <MenuItem onClick={logOut}>
+                      <Typography textAlign="center">Logout</Typography>
+                    </MenuItem>
+                  </RouterLink>
+                ) : (
+                  <> </>
                 )}
               </Menu>
             </Box>
@@ -201,9 +232,9 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) =>
-                page === "Login" ? (
+                page === "Login" || page === "Home" ? (
                   <RouterLink
-                    to="/login"
+                    to={page}
                     style={{
                       textDecoration: "none",
                       color: "inherit",
@@ -228,6 +259,47 @@ function ResponsiveAppBar() {
                     </MenuItem>
                   </Link>
                 )
+              )}
+              {user ? (
+                <Box sx={{ flexGrow: 0 }}>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar
+                        alt={user.name}
+                        src="/static/images/avatar/2.jpg"
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  <Menu
+                    sx={{ mt: "45px" }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                  >
+                    {settings.map((setting) => (
+                      <MenuItem
+                        key={setting}
+                        onClick={
+                          setting == "Logout" ? logOut : handleCloseUserMenu
+                        }
+                      >
+                        <Typography textAlign="center">{setting}</Typography>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </Box>
+              ) : (
+                <> </>
               )}
             </Box>
           </Toolbar>
