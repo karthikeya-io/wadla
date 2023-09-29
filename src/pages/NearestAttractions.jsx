@@ -1,8 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button, Container, Typography, Box } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import { Attractions } from "../content/Attractions";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const NearestAttractions = () => {
   const navigate = useNavigate();
@@ -82,11 +83,22 @@ const NearestAttractions = () => {
                 sx={{
                   textAlign: "center",
                   fontFamily: "inherit",
-                  color: "#25CCF7",
+                  color: "#f9adc0",
                   fontWeight: "bold",
                 }}
               >
-                {attraction.title}
+                <Link
+                  to={attraction.wikiLink}
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                  }}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {attraction.title}
+                  <LaunchIcon />
+                </Link>
               </Typography>
               <Box
                 sx={{
@@ -94,26 +106,27 @@ const NearestAttractions = () => {
                   flexDirection: { xs: "column", md: "row" },
                   justifyContent: "space-between",
                   width: "100%",
-                  padding: "10px",
-                  gap: "30px",
+                  padding: {
+                    xs: "5px",
+                    md: "10px",
+                  },
+                  gap: "20px",
                 }}
               >
-                <Box>
+                
                   <img
                     src={attraction.image}
                     alt={attraction.title}
                     style={{
-                      width: "300px",
+                      margin: "auto",
+                      padding: "0",
+                      maxWidth: "300px",
                       height: "250px",
                       borderRadius: "10px",
                     }}
                   />
-                </Box>
                 <Box>
-                  <Typography
-                    variant="h6"
-                    sx={{  fontFamily: "inherit" }}
-                  >
+                  <Typography variant="h6" sx={{ fontFamily: "inherit" }}>
                     {attraction.description}
                   </Typography>
                 </Box>
@@ -141,7 +154,6 @@ const NearestAttractions = () => {
                   <iframe
                     title={attraction.title}
                     src={attraction.location}
-
                     width="100%"
                     height="100%"
                     style={{ border: 0, borderRadius: "15px" }}
