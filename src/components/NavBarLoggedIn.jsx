@@ -13,39 +13,24 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../assets/iiits.webp";
-import { Link } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const settings = ["Logout"];
+const pages = ["3.0 Home", "Home"];
 
-function ResponsiveAppBar() {
-  const [pages, setPages] = useState([
-    "About",
-    "Speakers",
-    "News",
-    "Archive",
-    "Schedule",
-    "Login",
-    "Register",
-  ]);
+function NavBarLoggedIn({ user }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const user = JSON.parse(localStorage.getItem("user"));
+
+  const settings = ["Logout"];
+
+  const navigage = useNavigate();
 
   const logOut = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     localStorage.removeItem("timeOfLogin");
-    window.location.reload();
+    navigage("/");
   };
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
-    if (user) {
-      setPages(["About", "Speakers", "News", "Archive", "Schedule", "Home"]);
-    }
-  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -70,7 +55,6 @@ function ResponsiveAppBar() {
           bgcolor: "#242B2E",
           color: "white",
           boxShadow: "none",
-          borderRadius: "0 0 25px 25px",
         }}
       >
         <Container maxWidth="xl">
@@ -147,54 +131,24 @@ function ResponsiveAppBar() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) =>
-                  page === "Login" || page === "Home" ? (
-                    <RouterLink
-                      to={page}
-                      style={{
-                        textDecoration: "none",
-                        color: "inherit",
-                      }}
-                      activeClass="active"
-                    >
-                      <MenuItem key={page}>
-                        <Typography textAlign="center">{page}</Typography>
-                      </MenuItem>
-                    </RouterLink>
-                  ) : (
-                    <Link
-                      activeClass="active"
-                      to={page === "Login" ? "/login" : page}
-                      spy={true}
-                      smooth={true}
-                      offset={-70}
-                      duration={500}
-                    >
-                      <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">{page}</Typography>
-                      </MenuItem>
-                    </Link>
-                  )
-                )}
-                {user ? (
-                  <RouterLink
+                {pages.map((page) => (
+                  <Link
+                    activeClass="active"
+                    to={page == "3.0 Home" ? "/" : `/${page}`}
                     style={{
                       textDecoration: "none",
                       color: "inherit",
                     }}
-                    activeClass="active"
                   >
-                    <MenuItem onClick={logOut}>
-                      <Typography textAlign="center">Logout</Typography>
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">{page}</Typography>
                     </MenuItem>
-                  </RouterLink>
-                ) : (
-                  <> </>
-                )}
+                  </Link>
+                ))}
               </Menu>
             </Box>
             <Avatar
-              alt="Remy Sharp"
+              alt={user.name}
               src={logo}
               sx={{
                 display: { xs: "flex", md: "none" },
@@ -231,76 +185,52 @@ function ResponsiveAppBar() {
                 justifyContent: "flex-end",
               }}
             >
-              {pages.map((page) =>
-                page === "Login" || page === "Home" ? (
-                  <RouterLink
-                    to={page}
-                    style={{
-                      textDecoration: "none",
-                      color: "inherit",
-                    }}
-                    activeClass="active"
+              {pages.map((page) => (
+                <Link
+                  activeClass="active"
+                  to={page == "3.0 Home" ? "/" : `/${page}`}
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                  }}
+                >
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt={user.name} src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem
+                    key={setting}
+                    onClick={setting == "Logout" ? logOut : handleCloseUserMenu}
                   >
-                    <MenuItem key={page}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  </RouterLink>
-                ) : (
-                  <Link
-                    activeClass="active"
-                    to={page === "Login" ? "/login" : page}
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                  >
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  </Link>
-                )
-              )}
-              {user ? (
-                <Box sx={{ flexGrow: 0 }}>
-                  <Tooltip title="Open settings">
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                      <Avatar
-                        alt={user.name}
-                        src="/static/images/avatar/2.jpg"
-                      />
-                    </IconButton>
-                  </Tooltip>
-                  <Menu
-                    sx={{ mt: "45px" }}
-                    id="menu-appbar"
-                    anchorEl={anchorElUser}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    open={Boolean(anchorElUser)}
-                    onClose={handleCloseUserMenu}
-                  >
-                    {settings.map((setting) => (
-                      <MenuItem
-                        key={setting}
-                        onClick={
-                          setting == "Logout" ? logOut : handleCloseUserMenu
-                        }
-                      >
-                        <Typography textAlign="center">{setting}</Typography>
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </Box>
-              ) : (
-                <> </>
-              )}
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
             </Box>
           </Toolbar>
         </Container>
@@ -313,4 +243,4 @@ function ResponsiveAppBar() {
     </div>
   );
 }
-export default ResponsiveAppBar;
+export default NavBarLoggedIn;

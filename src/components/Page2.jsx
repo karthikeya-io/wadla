@@ -9,7 +9,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LaunchIcon from "@mui/icons-material/Launch";
-
+import FiberNewIcon from "@mui/icons-material/FiberNew";
 const Page2 = () => {
   function ScrollingText() {
     const containerStyle = {
@@ -22,16 +22,24 @@ const Page2 = () => {
 
     const textStyle = {
       display: "inline-block",
-      color: "#6B8E23",
+      color: "blue",
       whiteSpace: "nowrap",
       animation: "scrollText 25s linear infinite",
       fontSize: "1.2rem",
       paddingLeft: "100%",
     };
 
+    const blinkTextStyle = {
+      display: "inline-block",
+      whiteSpace: "nowrap",
+      fontSize: "1.5rem",
+      animation: "blinkText 2s linear infinite",
+    };
+
     return (
       <div style={containerStyle}>
         <Typography variant="h4" component="span" style={textStyle}>
+          <FiberNewIcon sx={blinkTextStyle} />
           Deadline for Registration is 30th September 2023.
         </Typography>
       </div>
@@ -1078,6 +1086,17 @@ const Page2 = () => {
             100% {
               transform: translateX(-100%);
             }
+          }
+          @keyframes blinkText {
+          0% {
+            color: red;
+          }
+          50% {
+            color: green;
+          }
+          100% {
+            color: blue;
+          }
           }
         `}
       </style>
