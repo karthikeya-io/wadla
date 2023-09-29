@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import RegistrationForm from "../components/RegistrationForm";
 import { Box, Button } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 
 const RegistrationPage = () => {
+  const navigate = useNavigate();
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -27,7 +29,7 @@ const RegistrationPage = () => {
       >
         <Button
           variant="contained"
-          href="/"
+          onClick={() => navigate("/")}
           startIcon={<HomeIcon />}
           sx={{
             position: {

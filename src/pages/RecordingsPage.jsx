@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import { EventList } from "./../EventList";
+import { EventList } from "../content/EventList";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Player from "./../components/Player";
 import { useParams, useNavigate } from "react-router-dom";
