@@ -7,10 +7,8 @@ Welcome to the Workshop on Advances in Deep Learning and Applications (WADLA) 3.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-
 - [Configuration](#configuration)
 - [Contributing](#contributing)
-
 - [Acknowledgments](#acknowledgments)
 <!-- - [Components and Modules](#components-and-modules) -->
 <!-- - [License](#license) -->
