@@ -7,11 +7,13 @@ Welcome to the Workshop on Advances in Deep Learning and Applications (WADLA) 3.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-- [Components and Modules](#components-and-modules)
+
 - [Configuration](#configuration)
 - [Contributing](#contributing)
-- [License](#license)
+
 - [Acknowledgments](#acknowledgments)
+<!-- - [Components and Modules](#components-and-modules) -->
+<!-- - [License](#license) -->
 
 ## Installation
 
@@ -26,6 +28,8 @@ To set up the project locally, follow these steps:
 2. Install project dependencies using npm:
    ```bash
    npm install
+   ```
+
 
 ## Usage
 
@@ -41,22 +45,27 @@ To set up the project locally, follow these steps:
   ```
   Make sure to customize any configuration options or environment variables as needed.
 
+
 ## Folder Structure
 
 The project is organized with the following main directories:
 
-- `src`: Contains the source code of the project.
-- `public`: Contains the public assets and HTML template.
-- `node_modules`: Contains project dependencies.
+- `src/assets`: Contains project-related assets such as images, styles, or other resources.
+- `src/components`: This directory holds important React components used in the project.
+- `src/content`: Contains content-related resources, such as text or media.
+- `src/pages`: Houses the various pages or views of the application.
 
+<!--
 ## Components and Modules
 
 - **src/components**: This directory holds important React components used in the project.
 - **src/modules**: Contains various modules that extend the functionality of the application.
+-->
 
 ## Configuration
 
 The project may have configuration files. You can customize them as needed for your use case.
+
 
 ## Contributing
 
@@ -69,9 +78,11 @@ We welcome contributions from the community! If you'd like to contribute to the 
 
 Be sure to follow coding standards, participate in code reviews, and add appropriate tests for your changes.
 
+<!--
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+-->
 
 ## Acknowledgments
 
