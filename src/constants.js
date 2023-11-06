@@ -3,7 +3,7 @@ export const API_URL = "https://wadla-backend.azurewebsites.net/api";
 export const API_URL_REGISTRATION =
   "https://wadla-backend.azurewebsites.net/api/register/6473a8d750e038bfe765ab70";
 // export const API_URL_REGISTRATION =
-//   "http://localhost:5000/api/register/64b2e3beac614c977f53b3d5";
+//   "http://localhost:5000/api/register/6473a8d750e038bfe765ab70";
 export const RECAPTCHA_SITE_KEY = "6LdYOzgnAAAAAArxzpDt3X-6kHfTN9I42H2jPkTx";
 export const OTP_ENDPOINT = "https://wadla-backend.azurewebsites.net/api/otp";
 // export const OTP_ENDPOINT = "http://localhost:5000/api/otp";
