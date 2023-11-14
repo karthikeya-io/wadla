@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import logo from "../assets/iiits.webp";
+import logo from "../assets/WADLA-logo.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 const pages = ["3.0 Home", "Home", "Nearest-Attractions"];
@@ -61,7 +61,7 @@ function NavBarLoggedIn({ user }) {
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
             <Avatar
-              alt="Remy Sharp"
+              alt="WADLA Logo"
               src={logo}
               sx={{
                 display: { xs: "none", md: "flex" },
