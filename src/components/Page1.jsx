@@ -6,6 +6,7 @@ import defenceImg from "../assets/defence.webp";
 import graphsImg from "../assets/graphs.webp";
 import rlImg from "../assets/rl.webp";
 import banner1 from "../assets/banner1.webp";
+import logo from "../assets/WADLA-logo.webp";
 
 const Page1 = () => {
   const banners = [banner1, graphsImg, defenceImg, rlImg];
@@ -73,11 +74,32 @@ const Page1 = () => {
       >
         <div
           style={{
+            opacity: 0.3,
+            // center the image
+            zIndex: -10,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={logo}
+            alt="WADLA Logo"
+            style={{
+              objectFit: "contain",
+              position: "absolute",
+              width: "300px",
+              height: "300px",
+              borderRadius: "50%",
+            }}
+          />
+        </div>
+        <div
+          style={{
             width: "100%",
             transition: "all 0.5s ease",
-            backgroundColor: "#242B2E",
             color: "#FFFFFF",
             borderRadius: "0 0 25px 0",
+            backgroundColor: "#242B2E",
           }}
         >
           <h2

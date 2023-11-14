@@ -40,7 +40,7 @@ const Page2 = () => {
       <div style={containerStyle}>
         <Typography variant="h4" component="span" style={textStyle}>
           <FiberNewIcon sx={blinkTextStyle} />
-          Deadline for Registration is 10th November 2023.
+          Deadline for Registration is 15th November 2023.
         </Typography>
       </div>
     );
