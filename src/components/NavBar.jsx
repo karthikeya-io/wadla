@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import logo from "../assets/iiits.webp";
+import logo from "../assets/WADLA-logo.webp";
 import { Link } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -85,13 +85,13 @@ function ResponsiveAppBar() {
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
             <Avatar
-              alt="Remy Sharp"
+              alt="WADLA Logo"
               src={logo}
               sx={{
                 display: { xs: "none", md: "flex" },
                 mr: 1,
-                width: "50px",
-                height: "50px",
+                width: "70px",
+                height: "70px",
                 borderRadius: "50%",
                 boxShadow: "none",
               }}
@@ -110,7 +110,7 @@ function ResponsiveAppBar() {
                 sx={{
                   marginBottom: "-8px",
                   marginLeft: "5px",
-                  display: { xs: "none", md: "flex" },
+                  display: { xs: "none", lg: "flex" },
                 }}
               >
                 3rd International Research Workshop on Advances in
@@ -120,7 +120,7 @@ function ResponsiveAppBar() {
                 component="h2"
                 sx={{
                   marginLeft: "25px",
-                  display: { xs: "none", md: "flex" },
+                  display: { xs: "none", lg: "flex" },
                 }}
               >
                 Deep Learning and Applications
